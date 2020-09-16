@@ -1,6 +1,6 @@
 # Foundations - Low-level programming & Algorithm ― Hatching out :books:
 
-## C - Hello, World
+## C - Hello, World :bulb:
 
 En este proyecto, se entendera de forma directa que es el preprocesador, compiladores (en especial GCC), comandos y el lenguaje C como tal.
 
