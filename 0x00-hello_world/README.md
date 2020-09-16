@@ -1,4 +1,4 @@
-# Foundations - Low-level programming & Algorithm ― Hatching out :books:
+# Low-level programming & Algorithm
 
 ## C - Hello, World :bulb:
 
