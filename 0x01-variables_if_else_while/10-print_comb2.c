@@ -8,23 +8,19 @@
 
 int main(void)
 {
-	int a = '00';
+	int i = 0;
 
-
-	while (a <= '99')
+	for(i = 0; i < 100 ; i++)
 	{
-		putchar(a);
-		if (a == '99')
+		putchar((i/10)+'0');
+    	putchar((i%10)+'0');
+		if (i == 99)
 		{
 			putchar('\n');
-			return (0);
+			return(0);
 		}
-		else
-		{
-			putchar(',');
-			putchar(' ');
-			a++;
-		}
+		putchar(',');
+		putchar(' ');
 	}
 	return (0);
 }
