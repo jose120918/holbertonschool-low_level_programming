@@ -8,13 +8,13 @@
 
 int main(void)
 {
-	int a = '0';
+	int a = '00';
 
 
-	while (a <= '9')
+	while (a <= '99')
 	{
 		putchar(a);
-		if (a == '9')
+		if (a == '99')
 		{
 			putchar('\n');
 			return (0);
