@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
-* print_alphabet_10x - Correr funcion de imprimir alfabeto 10 veces
+* print_alphabet_10x - Prints 10 times the alphabet
 */
 void print_alphabet_x10(void)
 {
