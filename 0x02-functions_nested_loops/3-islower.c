@@ -2,15 +2,17 @@
 
 /**
  * _islower - checks for lowercase character.
+ * return 1 - si es minuscula el caracter
+ * return 0 - si es mayuscula
  */
 int _islower(int c)
 {
 	if (c >= 'a' && c <= 'z')
 	{
-		return(1);
+		return (1);
 	}
-	else if (c >= 'A' && c <= 'Z')
+	else
 	{
-		return(0);
+		return (0);
 	}
 }
