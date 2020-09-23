@@ -3,7 +3,6 @@
 /**
 * print_alphabet - llamar la funcion desde el main
 */
-
 void print_alphabet(void)
 {
 	char i;
