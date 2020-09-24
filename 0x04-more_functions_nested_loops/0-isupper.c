@@ -3,11 +3,11 @@
 /**
  * _isupper - checks for lowercase character.
  * @c: caracter recibo por main.
- * Return: 1 if c is lowercase
+ * Return: 1 if c is uppercase
  */
 int _isupper(int c)
 {
-	if (c <= 'A' || c <= 'Z')
+	if (c <= 'A')
 	{
 		return (1);
 	}
