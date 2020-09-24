@@ -7,7 +7,5 @@
  */
 void add(int i, int l)
 {
-	int t;
-	 t = i + l;
-	_putchar(t + '0');
+	return (i + l);
 }
