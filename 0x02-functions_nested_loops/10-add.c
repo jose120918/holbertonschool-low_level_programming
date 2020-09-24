@@ -4,8 +4,11 @@
  * add - Suma dos enteros por función.
  * @i: Primera varable entera a sumar.
  * @l: Segunda variable a sumar.
+ * Return: retorno con sumatoria
  */
-void add(int i, int l)
+int add(int i, int l)
 {
-	return (i + l);
+	int n;
+	n = i + l;
+	return(n);
 }
