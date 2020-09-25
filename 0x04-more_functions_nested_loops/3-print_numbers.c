@@ -1,16 +1,19 @@
 #include "holberton.h"
 
 /**
- * mul - checks for lowercase character.
- * @a: entero recibo por main.
- * @b: entero recibido por main
- * Return: 1 if c is uppercase
- */
-void print_numbers(void);
+*print_numbers - Funtion
+*
+*Return: 0
+*/
+
+void print_numbers(void)
 {
-	for (i = 0; i <= 9; i++)
+	int n;
+
+	for (n = 0; n <= 9; n++)
 	{
-		_putchar(i);
+		_putchar(n + '0');
 	}
 	_putchar('\n');
+
 }
