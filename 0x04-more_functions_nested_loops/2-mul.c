@@ -1,8 +1,9 @@
 #include "holberton.h"
 
 /**
- * _isdigit - checks for lowercase character.
- * @c: caracter recibo por main.
+ * mul - checks for lowercase character.
+ * @a: entero recibo por main.
+ * @b: entero recibido por main
  * Return: 1 if c is uppercase
  */
 int mul(int a, int b)
