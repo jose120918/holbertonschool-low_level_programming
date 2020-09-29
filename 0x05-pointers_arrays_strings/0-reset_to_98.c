@@ -1,13 +1,17 @@
 #include "holberton.h"
 
-/*
-* reset_to_98 - Funcion void solicitada
-* @n - Variablle de tipo entera entregada por main
-*/
-
+/**
+ * reset_to_98 - main function.
+ * @n: Pointer with the address value.
+ *
+ * Description: This function takes a pointer to an int as parameter
+ * and updates the value it points to to 98.
+ *
+ * Return: none.
+ */
 void reset_to_98(int *n)
 {
 	int y = *n;
-	y = 98;
+	 y = 98;
 	*n = y;
 }
