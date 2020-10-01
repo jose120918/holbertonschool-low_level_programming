@@ -10,5 +10,9 @@
  */
 void _puts(char *str)
 {
-	return (str);
+	while (*str != '\0')
+    {
+        _putchar(*str); /* print letter */
+        *str++;
+    }
 }
