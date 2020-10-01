@@ -11,8 +11,8 @@
 void _puts(char *str)
 {
 	while (*str != '\0')
-    {
-        _putchar(*str); /* print letter */
-        *str++;
-    }
+	{
+		_putchar(*str); /* print letter */
+		*str++;
+	}
 }
