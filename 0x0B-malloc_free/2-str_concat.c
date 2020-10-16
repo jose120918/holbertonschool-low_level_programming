@@ -23,7 +23,6 @@ char *str_concat(char *s1, char *s2)
 		s1 = ""; /* Devuelve NULL si str es nulo */
 	if (!s2)
 		s2 = "";
-	
 	for (size = 0; s1[size] != '\0'; size++) /* leng del string */
 		;
 	for (size2 = 0; s2[size2] != '\0'; size2++) /* leng string */
