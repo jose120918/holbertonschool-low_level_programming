@@ -2,7 +2,7 @@
 
 ## C - malloc, free :bulb:
 
-Memoria estatica y dinamica, malloc
+Uso de malloc aplicado a fuciones
 
 ### General
 
