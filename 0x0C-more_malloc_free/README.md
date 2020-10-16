@@ -40,4 +40,4 @@ What you should learn from this project:
 ---
 
 ## Author
-* **Laura Perez** - [lperezcas16](https://github.com/lperezcas16)
+* **Jose Muñoz** - [jose120918](https://github.com/jose120918/)
