@@ -19,13 +19,13 @@ char *str_concat(char *s1, char *s2)
 	int i, j; /* Iteradores de bucle */
 	char *array; /* Salida */
 
-	if (!s1 || !s2)
+	if (!s1 && !s2)
 	{
 		return (NULL); /* Devuelve NULL si str es nulo */
 	}
-	for (size = 0; s1[size] != '\0'; size++) /* Calculamos leng del string */
+	for (size = 0; s1 != NULL && s1[size] != '\0'; size++) /* leng del string */
 		;
-	for (size2 = 0; s2[size2] != '\0'; size2++) /* Calculamos leng del string */
+	for (size2 = 0; s2 != NULL && s2[size2] != '\0'; size2++) /* leng string */
 		;
 	array = malloc(((size) + (size + 1)) * sizeof(char)); /* New memory alloc */
 
