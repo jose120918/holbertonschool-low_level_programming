@@ -2,11 +2,11 @@
 #include <stdarg.h>
 
 /**
- * sum_them_all: Funcion caca
+ * sum_them_all - Funcion caca
  *
  * @n: NUmero de argumentos a sumar
  *
- * return: salida
+ * Return: salida
 */
 
 int sum_them_all(const unsigned int n, ...)
