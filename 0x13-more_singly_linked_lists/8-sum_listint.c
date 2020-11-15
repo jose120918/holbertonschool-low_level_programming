@@ -4,16 +4,21 @@
  * sum_listint - Function that sum lists
  * @head: head nodo
  *
- * Return: integer
+ * Return: suma
  */
 int sum_listint(listint_t *head)
 {
-	listint_t *new = head;
-	int sum;
+	int sum = 0;
 
-	while (new)
+	if (head != NULL)
 	{
-		sum += new->n, new = new->next;
+		while (head->next != NULL)
+		{
+			sum += head->n;
+			head = head->next;
+		}
+		sum += head->n;
+		return (sum);
 	}
 	return (sum);
 }
