@@ -2,7 +2,7 @@
 
 /**
  * print_list - Funcion
- * @h: lista
+ * @h: lista desde main
  * Return: i
  */
 size_t print_list(const list_t *h)
