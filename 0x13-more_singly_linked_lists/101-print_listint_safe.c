@@ -3,7 +3,7 @@
 /**
  * print_listint_safe -
  *
- * Return: 
+ * Return: nodes
  */
 size_t print_listint_safe(const listint_t *head)
 {
