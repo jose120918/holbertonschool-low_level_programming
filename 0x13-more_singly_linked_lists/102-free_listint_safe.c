@@ -1,34 +1,32 @@
 #include "lists.h"
 
 /**
- * free_listint_safe -
- *
- * Return: nodes
+ * free_listint_safe - mas listas enlazadas
+ * @h: Doble puntero asignado
+ * Return: i
  */
 size_t free_listint_safe(listint_t **h)
 {
-	int nodes = 0;
-	listint_t *turtle = h;
+	listint_t *temp;
+	size_t i = 0;
 
-	if (head == NULL)
+	temp = *h;
+	if (h == NULL)
+		return (i);
+	while (temp)
 	{
-		return (0);
-	}
-	printf("[%p] %i\n", (void *)head, (*head).n);
-	head = (*head).next;
-	for (nodes = 0; head != NULL; nodes++)
-	{
-		if (head < turtle)
+		if (temp <= temp->next)
 		{
-			printf("[%p] %i\n", (void *)head, (*head).n);
-		}
-		else
-		{
-			printf("-> [%p] %i\n", (void *)head, (*head).n);
+			free(temp);
+			i++;
 			break;
 		}
-		head = (*head).next;
-		turtle = (*turtle).next;
+
+		*h = temp->next;
+		free(temp);
+		temp = *h;
+		i++;
 	}
-	return (nodes + 1);
+	*h = NULL;
+	return (i);
 }
