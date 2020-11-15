@@ -1,34 +1,28 @@
 #include "lists.h"
 
 /**
- * print_listint_safe -
+ * print_listint_safe - Listas enlazadas
+ * @head: Dado desde main
  *
- * Return: nodes
+ * Return: i
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	int nodes = 0;
-	const listint_t *turtle = head;
+	size_t i = 0;
+	const listint_t *temp, *node;
 
-	if (head == NULL)
+	node = head;
+	while (node != NULL)
 	{
-		return (0);
-	}
-	printf("[%p] %i\n", (void *)head, (*head).n);
-	head = (*head).next;
-	for (nodes = 0; head != NULL; nodes++)
-	{
-		if (head < turtle)
+		printf("[%p] %d\n", (void *)node, node->n);
+		temp = node;
+		node = node->next;
+		i++;
+		if (temp <= node)
 		{
-			printf("[%p] %i\n", (void *)head, (*head).n);
-		}
-		else
-		{
-			printf("-> [%p] %i\n", (void *)head, (*head).n);
+			printf("-> [%p] %d\n", (void *)node, node->n);
 			break;
 		}
-		head = (*head).next;
-		turtle = (*turtle).next;
 	}
-	return (nodes + 1);
+	return (i);
 }
