@@ -1,19 +1,19 @@
 #include "lists.h"
 
 /**
- * print_dlistint - Funtion reads text file and prints lists
- *
- * @dlistint_t: the file to read
- * Return: size
+ * print_dlistint -  prints all the elements of a dlistint_t list
+ * @h: Head of the list
+ * Return: Number of nodes
  */
 size_t print_dlistint(const dlistint_t *h)
-
-size_t recorrido = 0;
-
-while (h)
 {
-	printf("%d\n", h->n);
-	h = h->next;
-	recorrido++;
+	size_t recorrido = 0;
+
+	while (h)
+	{
+		printf("%d\n", h->n);
+		h = h->next;
+		recorrido++;
+	}
+	return (recorrido);
 }
-return (recorrido);
