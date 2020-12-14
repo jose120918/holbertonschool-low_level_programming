@@ -7,12 +7,12 @@
  */
 size_t dlistint_len(const dlistint_t *h)
 {
-	size_t i = 0; /* Variable for counting elements*/
+	size_t iterador = 0;
 
-	while (h) /* While list exist*/
+	while (h)
 	{
 		h = h->next;
-		i++;
+		iterador++;
 	}
-	return (i);
+	return (iterador);
 }
