@@ -1,43 +1,51 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_set - add element to the hash table
- * @ht: hast to add
- * @key: the key for the hash
- * @value: value associated with the key
- *
- * Return: success or not
- */
+* hash_table_set -  adds an element to the hash table
+* @ht: hash table
+* @key: the key
+* @value: the value associated with the key
+* Return: 1 if it succeeded, 0 otherwise
+**/
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *new = NULL, *list = NULL;
-	unsigned long int i = 0;
+	hash_node_t *newNode = NULL;
+	unsigned long int index, sw = 0;
+	hash_node_t *head = NULL;
 
-	if (!new || !list || !ht)
-		return (0);
-	/* new space for the new element */
-	new = malloc(sizeof(hash_node_t));
-	if (!new)
-		return (0);
-	/* index of the hash table */
-	i = key_index((const unsigned char *)key, ht->size);
-	/* hash table with i elements of the array */
-	list = ht->array[i];
-	while (list)
-	{ /* compare number of the key*/
-		if (strcmp(list->key, key) == 0)
+	if (ht)
+	{
+		if (key != NULL)
 		{
-			free(list->value);
-			/* asigne the value*/
-			list->value = strdup(value);
+
+			index = key_index((unsigned char *)key, (*ht).size);
+			if ((*ht).array[index] != NULL)
+			{
+				head = (*ht).array[index];
+				while (head != NULL)
+				{
+					if (strcmp(key, (*head).key) == 0)
+					{
+						free((*head).value);
+						(*head).value = strdup(value);
+						sw = 1;
+						break;
+					}
+					head = (*head).next;
+				}
+			}
+			if (sw == 0)
+			{
+				newNode = malloc(sizeof(hash_node_t));
+				if (newNode == NULL)
+					return (0);
+				(*newNode).value = strdup(value);
+				(*newNode).key = strdup(key);
+				(*newNode).next = (*ht).array[index];
+				(*ht).array[index] = newNode;
+			}
 			return (1);
 		}
-		/* travel in the list */
-		list = list->next;
 	}
-	new->key = strdup(key);
-	new->value = strdup(value);
-	new->next = ht->array[i];
-	ht->array[i] = new;
-	return (1);
+	return (0);
 }
