@@ -1,43 +1,61 @@
 #include "hash_tables.h"
-
 /**
- * hash_table_set - add element to the hash table
- * @ht: hast to add
- * @key: the key for the hash
- * @value: value associated with the key
- *
- * Return: success or not
+ * hash_table_set - function that adds an element to the hash table.
+ * @ht: the hash table you want to add or update
+ * @key: is the key
+ * @value:the value associated with the key.
+ * Return: 1 if it succeeded, 0 if not
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *new = NULL, *list = NULL;
-	unsigned long int i = 0;
+	unsigned long int idx = 0;
+	hash_node_t *new = NULL;
 
-	if (!new || !list || !ht)
+	if (!ht || !key || !(*key) || !value)
 		return (0);
-	/* new space for the new element */
+
+	idx = key_index((const unsigned char *)key, ht->size);
+
+	if (ht->array[idx] && !(match(key, ht->array[idx], value)))
+		return (1);
+
 	new = malloc(sizeof(hash_node_t));
 	if (!new)
 		return (0);
-	/* index of the hash table */
-	i = key_index((const unsigned char *)key, ht->size);
-	/* hash table with i elements of the array */
-	list = ht->array[i];
-	while (list)
-	{ /* compare number of the key*/
-		if (strcmp(list->key, key) == 0)
-		{
-			free(list->value);
-			/* asigne the value*/
-			list->value = strdup(value);
-			return (1);
-		}
-		/* travel in the list */
-		list = list->next;
-	}
 	new->key = strdup(key);
 	new->value = strdup(value);
-	new->next = ht->array[i];
-	ht->array[i] = new;
+	if (!(new->key) || !(new->value))
+	{
+		if (new->key)
+			free(new->key);
+		free(new);
+		return (0);
+	}
+	new->next = ht->array[idx];
+	ht->array[idx] = new;
+	return (1);
+}
+
+/**
+ *match - Check if a key value is already in a bucket.
+ * @key: key
+ * @arry: bucket
+ * @value: node value to update
+ * Return: 1 if not match and 0 if match
+ */
+int match(const char *key, hash_node_t *arry, const char *value)
+{
+	hash_node_t *elment = arry;
+
+	while (elment)
+	{
+		if (!(strcmp(elment->key, key)))
+		{
+			free(elment->value);
+			elment->value = strdup(value);
+			return (0);
+		}
+		elment = elment->next;
+	}
 	return (1);
 }
