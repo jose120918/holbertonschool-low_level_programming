@@ -1,0 +1,12 @@
+CC=gcc
+SRC=main.c holberton.c
+OBJ=$(SRC:.c=.o)
+NAME=holberton
+
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+# Explicit convertion (it can be commented)
+%o: %c
+	$(CC) -c $^
+
